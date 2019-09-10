@@ -3,7 +3,7 @@ using ExercicesReflection;
 using Models;
 using System;
 using CustomAttribute = Models.CustomAttribute;
-
+using System.Reflection;
 
 namespace Tests
 {
@@ -48,6 +48,55 @@ namespace Tests
             /*Person person = new Person();
             string name = Exercices.ReturnName();
             Assert.That(name, Is.EqualTo(person.Name));*/
-        }    
+        }
+
+        [Test]
+        public void t5_sets_name()
+        {
+            Person person = new Person();
+            Type type = Exercice1.SetName(person, "Titi");
+            Assert.That(person.Name, Is.EqualTo("Titi"));
+        }
+
+        [Test]
+        public void t6_gets_method()
+        {
+            Person person = new Person();
+            MethodInfo method = Exercice1.GetMethod(person, "IncrementAge");
+            method.Invoke(person, null);
+            Assert.That(person.Age, Is.EqualTo(16));
+        }
+
+        [Test]
+        public void t7_gets_return_type()
+        {
+            Person person = new Person();
+            Type type = Exercice1.GetReturnType(person, "IncrementAge");
+            Assert.That(type, Is.EqualTo(typeof(int)));
+        }
+
+        [Test]
+        public void t8_gets_method_parameters()
+        {
+            Person person = new Person();
+            ParameterInfo[] parameters = Exercice1.GetMethodParameters(person, "SetAge");
+            Assert.That("" + parameters[0], Is.EqualTo("Int32 age"));
+        }
+
+        [Test]
+        public void t9_gets_base_type()
+        {
+            Person person = new Person();
+            Type type = Exercice1.GetBaseType(person);
+            Assert.That(type, Is.EqualTo(typeof(object)));
+        }
+
+        [Test]
+        public void tA_gets_interface()
+        {
+            Person person = new Person();
+            Type theInterface = Exercice1.GetInterface(person, "IncrementAge");
+            Assert.That(theInterface, Is.EqualTo(null));
+        }
     }
 }

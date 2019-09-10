@@ -28,5 +28,11 @@ namespace Models
             Age = ++Age;
             return Age;
         }
+
+        [Custom("SetAge")]
+        public void SetAge(int age)
+        {
+            Age = age;
+        }
     }
 }
