@@ -13,5 +13,11 @@ namespace Models
             Age = 15;
             NumeroDeSecu = "0123456789";
         }
+
+        public int IncrementAge()
+        {
+            Age = ++Age;
+            return Age;
+        }
     }
 }
