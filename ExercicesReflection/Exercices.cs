@@ -8,7 +8,7 @@ namespace ExercicesReflection
 {
     public class Exercices
     {
-        private static Type GetTypeByReflection()
+        public static Type GetTypeByReflection()
         {
             Assembly currentAssembly = typeof(Exercices).Assembly;
             var referencedAssemblies = currentAssembly.GetReferencedAssemblies();
@@ -19,11 +19,11 @@ namespace ExercicesReflection
                     models = Assembly.Load(assembly.Name);
             }
 
-            Type PersonType = models.GetType("Person");
+            Type PersonType = models.GetType("Models.Person");
             return PersonType;
         }
 
-        private static object GetObjectInstanceByReflection()
+        public static object GetObjectInstanceByReflection()
         {
             Type type = GetTypeByReflection();
             object ClassInstance = Activator.CreateInstance(type);
