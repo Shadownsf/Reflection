@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Models;
 
 namespace ExercicesReflection
 {
@@ -23,6 +24,7 @@ namespace ExercicesReflection
             return PersonType;
         }
 
+
         public static object GetObjectInstanceByReflection()
         {
             Type type = GetTypeByReflection();
@@ -30,27 +32,40 @@ namespace ExercicesReflection
             return ClassInstance;
         }
 
-        public static string ReturnName()
+        public static string ReturnName(object o)
         {
-            Type type = GetTypeByReflection();
-            object objectInstance = GetObjectInstanceByReflection();
-
-            var name = type.GetProperty("Name").GetValue(objectInstance).ToString();
+            Type type = o.GetType();
+            
+            var name = type.GetProperty("Name").GetValue(o).ToString();
             return name;
         }
-        public static int ReturnAge()
+        public static int ReturnAge(object o)
         {
-            Type type = GetTypeByReflection();
-            object objectInstance = GetObjectInstanceByReflection();
+            Type type = o.GetType();
 
-            throw new NotImplementedException();
+            var age = (int)type.GetProperty("Age").GetValue(o);
+            return age;
         }
-        public static string ReturnNumeroDeSecu()
-        {
-            Type type = GetTypeByReflection();
-            object objectInstance = GetObjectInstanceByReflection();
 
-            throw new NotImplementedException();
+
+
+        public static string ReturnNumeroDeSecu(object o)
+        {
+            Type type = o.GetType();
+
+            var numeroDeSecu = type.GetProperty("NumeroDeSecu").GetValue(o).ToString();
+            return numeroDeSecu;
+        }
+        public static int returAgeincremented(object o)
+        {
+            Type type = o.GetType();
+
+            // recupere la method specifier en parametre de GetMethod()
+            var method = type.GetMethod("IncrementAge");
+
+            //fait un appel a la method getMethod
+            var age = (int)method.Invoke(o, null);
+            return age;
         }
     }
 }
