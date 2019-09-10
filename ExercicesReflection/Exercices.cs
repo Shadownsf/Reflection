@@ -24,7 +24,6 @@ namespace ExercicesReflection
             return PersonType;
         }
 
-
         public static object GetObjectInstanceByReflection()
         {
             Type type = GetTypeByReflection();
@@ -32,6 +31,7 @@ namespace ExercicesReflection
             return ClassInstance;
         }
 
+        [Custom("Method_ReturnName")]
         public static string ReturnName(object o)
         {
             Type type = o.GetType();
@@ -39,7 +39,9 @@ namespace ExercicesReflection
             var name = type.GetProperty("Name").GetValue(o).ToString();
             return name;
         }
-        public static int ReturnAge(object o)
+
+        [Custom("Method_ReturnAge")]
+ 	public static int ReturnAge(object o)
         {
             Type type = o.GetType();
 
@@ -47,7 +49,7 @@ namespace ExercicesReflection
             return age;
         }
 
-
+        [Custom("Method_ReturnNumeroDeSecu")]
 
         public static string ReturnNumeroDeSecu(object o)
         {

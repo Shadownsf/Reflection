@@ -2,6 +2,8 @@ using NUnit.Framework;
 using ExercicesReflection;
 using Models;
 using System;
+using CustomAttribute = Models.CustomAttribute;
+
 
 namespace Tests
 {
@@ -35,6 +37,17 @@ namespace Tests
             Person person = new Person();
             string numeroDeSecu = Exercices.ReturnNumeroDeSecu(person);
             Assert.That(numeroDeSecu, Is.EqualTo(person.NumeroDeSecu));
+        }
+
+        [Test]
+        public void t4_returns_attribute()
+        {
+            Exercices ExAttribute = new Exercices();
+
+            var attribute = Attribute.GetCustomAttribute(typeof(Exercices), typeof(CustomAttribute));
+            /*Person person = new Person();
+            string name = Exercices.ReturnName();
+            Assert.That(name, Is.EqualTo(person.Name));*/
         }    
     }
 }
