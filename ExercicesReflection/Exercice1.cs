@@ -112,5 +112,10 @@ namespace ExercicesReflection
 
             return matchingProps;
         }
+
+        public static object GetIstance(Type type)
+        {
+            return Activator.CreateInstance(type);
+        }
     }
 }

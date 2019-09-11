@@ -105,5 +105,13 @@ namespace Tests
             Exercice1.InvokeMethod(person, "SetAge", parameters);
             Assert.That(person.Age, Is.EqualTo(25));
         }
+
+        [Test]
+        public void tC_get_instance()
+        {
+            Type type = typeof(Person);
+            object instance = Exercice1.GetIstance(type);
+            Assert.That(instance, Is.InstanceOf(typeof(Person)));
+        }
     }
 }
