@@ -73,5 +73,34 @@ namespace ExercicesReflection
 
             return type.GetInterface(s);
         }
+
+        public static void InvokeMethod(object o, string s, object[] parameters)
+        {
+            Type type = o.GetType();
+
+            MethodInfo method = type.GetMethod(s);
+            method.Invoke(o, parameters);
+        }
+
+        public static PropertyInfo[] GetPropertiesByCutomAttribute(object o, string s)
+        {
+            Type type = o.GetType();
+
+            PropertyInfo[] allProps = type.GetProperties();
+            PropertyInfo[] matchingProps = new PropertyInfo[0];
+
+            foreach (PropertyInfo prop in allProps)
+            {
+                Array.Resize(ref matchingProps, matchingProps.Length + 1);
+                matchingProps[matchingProps.GetUpperBound(0)] = prop;
+            }
+
+            return matchingProps;
+        }
+
+        public static object GetInstance(Type type)
+        {
+            return Activator.CreateInstance(type);
+        }
     }
 }

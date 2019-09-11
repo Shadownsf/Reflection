@@ -2,7 +2,6 @@ using NUnit.Framework;
 using ExercicesReflection;
 using Models;
 using System;
-using ExerciceBateau;
 using System.Reflection;
 
 namespace Tests
@@ -97,7 +96,7 @@ namespace Tests
         public void tC_get_instance()
         {
             Type type = typeof(Person);
-            object instance = Exercices_Lvl_1.GetIstance(type);
+            object instance = Exercices_Lvl_1.GetInstance(type);
             Assert.That(instance, Is.InstanceOf(typeof(Person)));
         }
     }
