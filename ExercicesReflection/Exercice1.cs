@@ -61,6 +61,7 @@ namespace ExercicesReflection
             MethodInfo method = type.GetMethod(s);
             return method;
         }
+
         [Custom("Method_GetReturnType")]
         public static Type GetReturnType(object o, string s)
         {
