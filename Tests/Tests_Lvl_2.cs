@@ -1,9 +1,12 @@
 using NUnit.Framework;
 using ExercicesReflection;
 using Models;
+using Web;
+using System.Linq;
 using System;
-//using CustomAttribute = Models.CustomAttribute;
+using CustomAttribute = Models.CustomAttribute;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -22,21 +25,32 @@ namespace Tests
         [Test]
         public void Get_AssemblyName_Referenced()
         {
-            Person person = new Person();
-            var assemblies = new string[2] {"", "" };
-            AssemblyName[] assembiesReturned = Exercices_Lvl_2.Get_AssembliesName_Referenced(person);
+            var exemples = new List<string>() { "Models", "Web" };
+            AssemblyName[] assembiesReturned = Exercices_Lvl_2.Get_AssembliesName_Referenced(this);
 
-            CollectionAssert.AreEquivalent(assemblies, assembiesReturned);
+            assembiesReturned = assembiesReturned.Where(a => exemples.Any(e => a.Name == e)).ToArray();
+            Assert.IsTrue(assembiesReturned.Length == exemples.Count);
         }
 
         [Test]
-        public void Get_Assembly_By_Name()
+        public void Get_Object_That_Implements_Interface()
         {
-            string nameOfAssembly = "Models";
-            var assembly = Assembly.GetAssembly(typeof(Person));
-            var assemblyReturned = Exercices_Lvl_2.Get_Assembly_By_Name(nameOfAssembly);
+            string nameOfInterface = "IVehicule";
+            var assembly = Assembly.GetAssembly(typeof(Voiture));
+            var o = Exercices_Lvl_2.Get_Object_That_Implements_Interface(assembly, nameOfInterface);
+            Assert.IsTrue(o is Voiture);
+        }
 
-            Assert.That(assembly, Is.EqualTo(assemblyReturned));
+        [Test]
+        public void Get_Object_With_Partern()
+        {
+            string pattern = "Controller";
+            var exemples = new List<string>() { "PersonController", "VoitureController" };
+
+            var assembly = Assembly.GetAssembly(typeof(PersonService));
+            var olist = Exercices_Lvl_2.Get_Object_With_Partern(assembly, pattern);
+            olist = olist.Where(p => exemples.Any(e => p.GetType().Name == e)).ToList();
+            Assert.IsTrue(olist.Count == exemples.Count);
         }
     }
 }

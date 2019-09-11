@@ -9,6 +9,11 @@ namespace Tests
 {
     public class Tests_Lvl_1
     {
+        [SetUp]
+        public void Setup()
+        {
+
+        }
 
         [Test]
         public void t1_returns_name()
@@ -21,9 +26,12 @@ namespace Tests
         [Test]
         public void t4_returns_attribute()
         {
-            Bateau bateau = new Bateau();
-            PropertyInfo[] props = Exercice1.GetPropertiesByCutomAttribute(bateau, "Property_bateau_name");
-            Assert.That("" + props[0], Is.EqualTo("System.String Name"));
+            Exercices_Lvl_1 ExAttribute = new Exercices_Lvl_1();
+
+            var attribute = Attribute.GetCustomAttribute(typeof(Exercices_Lvl_1), typeof(CustomAttribute));
+            /*Person person = new Person();
+            string name = Exercices.ReturnName();
+            Assert.That(name, Is.EqualTo(person.Name));*/
         }
 
         [Test]
@@ -81,7 +89,7 @@ namespace Tests
             Person person = new Person();
             object[] parameters = new object[1];
             parameters[0] = 25;
-            Exercice1.InvokeMethod(person, "SetAge", parameters);
+            Exercices_Lvl_1.InvokeMethod(person, "SetAge", parameters);
             Assert.That(person.Age, Is.EqualTo(25));
         }
 
@@ -89,8 +97,8 @@ namespace Tests
         public void tC_get_instance()
         {
             Type type = typeof(Person);
-            object instance = Exercice1.GetIstance(type);
-            Assert.That(instance is Person);
+            object instance = Exercices_Lvl_1.GetIstance(type);
+            Assert.That(instance, Is.InstanceOf(typeof(Person)));
         }
     }
 }

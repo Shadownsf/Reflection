@@ -16,6 +16,7 @@
     <ProjectReference Include="..\Bateau\ExerciceBateau.csproj" />
     <ProjectReference Include="..\ExercicesReflection\ExercicesReflection.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Web\Web.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Models;
 
 namespace ExercicesReflection
 {
     public class Exercices_Lvl_1
     {
-        [Custom("Method_ReturnName")]
         public static string ReturnName(object o)
         {
             Type type = o.GetType();
@@ -30,8 +28,6 @@ namespace ExercicesReflection
             return age;
         }
 
-
-        [Custom("Method_SetName")]
         public static Type SetName(object o, string s)
         {
             Type type = o.GetType();
@@ -40,7 +36,6 @@ namespace ExercicesReflection
             return type;
         }
 
-        [Custom("Method_GetMethod")]
         public static MethodInfo GetMethod(object o, string s)
         {
             Type type = o.GetType();
@@ -49,7 +44,6 @@ namespace ExercicesReflection
             return method;
         }
 
-        [Custom("Method_GetReturnType")]
         public static Type GetReturnType(object o, string s)
         {
             Type type = o.GetType();
@@ -58,7 +52,6 @@ namespace ExercicesReflection
             return method.ReturnType;
         }
 
-        [Custom("Method_GetMethodParameters")]
         public static ParameterInfo[] GetMethodParameters(object o, string s)
         {
             Type type = o.GetType();
@@ -67,7 +60,6 @@ namespace ExercicesReflection
             return method.GetParameters();
         }
 
-        [Custom("Method_GetBaseType")]
         public static Type GetBaseType(object o)
         {
             Type type = o.GetType();
@@ -75,7 +67,6 @@ namespace ExercicesReflection
             return type.BaseType;
         }
 
-        [Custom("Method_GetInterface")]
         public static Type GetInterface(object o, string s)
         {
             Type type = o.GetType();

@@ -2,10 +2,16 @@
 
 namespace Models
 {
-    public class Person
+    public interface IMammal
+    {
+    }
+
+    public class Person : IMammal
     {
         public string Name { get; set; }
+
         public int Age { get; set; }
+
         public string NumeroDeSecu { get; set; }
 
         public Person()
@@ -25,5 +31,5 @@ namespace Models
         {
             Age = age;
         }
-    }
+    } 
 }

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using Models;
+using System.Linq;
 
 namespace ExercicesReflection
 {
@@ -22,20 +20,28 @@ namespace ExercicesReflection
             return NameOfreferencedAssemblies;
         }
 
-        public static Assembly Get_Assembly_By_Name(string name) // return null if assembly do not exists
+        public static object Get_Object_That_Implements_Interface(Assembly a, string interfaceName)
         {
-            var Person = new Person();
-            Assembly currentAssembly = typeof(Exercices_Lvl_2).Assembly;
-            var referencedAssemblies = currentAssembly.GetReferencedAssemblies();
-
-            foreach (AssemblyName assembly in referencedAssemblies)
+            Type[] types = a.GetTypes();
+            foreach (Type type in types)
             {
-                if (assembly.Name.Equals(name))
-                    return Assembly.Load(assembly.Name);
+                if(type.GetInterface(interfaceName) != null)
+                    return Activator.CreateInstance(type);
             }
             return null;
         }
 
+        public static List<object> Get_Object_With_Partern(Assembly a, string pattern)
+        {
+            Type[] types = a.GetTypes();
+            List<object> ObjectsMatched = new List<object>();
+            types = types.Where(t => t.Name.Contains(pattern)).ToArray();
 
+            foreach (Type type in types)
+            {
+               ObjectsMatched.Add(Activator.CreateInstance(type));
+            }
+            return ObjectsMatched;
+        }
     }
 }
