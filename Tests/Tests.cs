@@ -2,7 +2,7 @@ using NUnit.Framework;
 using ExercicesReflection;
 using Models;
 using System;
-using CustomAttribute = Models.CustomAttribute;
+using ExerciceBateau;
 using System.Reflection;
 
 namespace Tests
@@ -42,12 +42,9 @@ namespace Tests
         [Test]
         public void t4_returns_attribute()
         {
-            Exercices ExAttribute = new Exercices();
-
-            var attribute = Attribute.GetCustomAttribute(typeof(Exercices), typeof(CustomAttribute));
-            /*Person person = new Person();
-            string name = Exercices.ReturnName();
-            Assert.That(name, Is.EqualTo(person.Name));*/
+            Bateau bateau = new Bateau();
+            PropertyInfo[] props = Exercice1.GetPropertiesByCutomAttribute(bateau, "Property_bateau_name");
+            Assert.That("" + props[0], Is.EqualTo("System.String Name"));
         }
 
         [Test]
@@ -97,6 +94,16 @@ namespace Tests
             Person person = new Person();
             Type theInterface = Exercice1.GetInterface(person, "IncrementAge");
             Assert.That(theInterface, Is.EqualTo(null));
+        }
+
+        [Test]
+        public void tB_invokes_a_method()
+        {
+            Person person = new Person();
+            object[] parameters = new object[1];
+            parameters[0] = 25;
+            Exercice1.InvokeMethod(person, "SetAge", parameters);
+            Assert.That(person.Age, Is.EqualTo(25));
         }
     }
 }
