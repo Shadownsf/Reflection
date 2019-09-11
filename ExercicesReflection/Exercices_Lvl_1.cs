@@ -18,7 +18,7 @@ namespace ExercicesReflection
             return name;
         }
 
-        public static int returAgeincremented(object o)
+        public static int returnAgeincremented(object o)
         {
             Type type = o.GetType();
 
