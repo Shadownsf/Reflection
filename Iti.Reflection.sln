@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Exercices", "ExercicesReflection\ITI.Reflection.Exercices.csproj", "{CB61682C-1B59-4D67-A928-3F283E687760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Exercices", "ITI.Reflection.Exercices\ITI.Reflection.Exercices.csproj", "{CB61682C-1B59-4D67-A928-3F283E687760}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4387A50E-83EF-486D-88C9-371D46D0679E} = {4387A50E-83EF-486D-88C9-371D46D0679E}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Models", "Models\ITI.Reflection.Models.csproj", "{4387A50E-83EF-486D-88C9-371D46D0679E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Models", "ITI.Reflection.Models\ITI.Reflection.Models.csproj", "{4387A50E-83EF-486D-88C9-371D46D0679E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Tests", "Tests\ITI.Reflection.Tests.csproj", "{3F64F854-D1E8-428A-B75F-AE1DC3E4FE27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Tests", "ITI.Reflection.Tests\ITI.Reflection.Tests.csproj", "{3F64F854-D1E8-428A-B75F-AE1DC3E4FE27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Web", "Web\ITI.Reflection.Web.csproj", "{CF9F4C25-AB59-48C7-AB4E-0DE9B6A6C13B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Web", "ITI.Reflection.Web\ITI.Reflection.Web.csproj", "{CF9F4C25-AB59-48C7-AB4E-0DE9B6A6C13B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
