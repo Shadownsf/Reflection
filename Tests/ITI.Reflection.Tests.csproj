@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExercicesReflection\ExercicesReflection.csproj" />
-    <ProjectReference Include="..\Models\Models.csproj" />
-    <ProjectReference Include="..\Web\Web.csproj" />
+    <ProjectReference Include="..\ExercicesReflection\ITI.Reflection.Exercices.csproj" />
+    <ProjectReference Include="..\Models\ITI.Reflection.Models.csproj" />
+    <ProjectReference Include="..\Web\ITI.Reflection.Web.csproj" />
   </ItemGroup>
 
 </Project>

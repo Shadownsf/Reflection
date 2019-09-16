@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Models
 {
     public class GenericType<T>
     {
+        public Type GetBaseType<U>(U t)
+        {
+            return t.GetType().BaseType;
+        }
     }
 }

@@ -20,6 +20,5 @@ namespace Models
             Poids = 800;
             Captain = new Person();
         }
-
     }
 }

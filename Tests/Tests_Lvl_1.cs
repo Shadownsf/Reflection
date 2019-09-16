@@ -11,7 +11,7 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-
+            Checker();
         }
 
         [Test]
@@ -98,6 +98,12 @@ namespace Tests
             Type type = typeof(Person);
             object instance = Exercices_Lvl_1.GetInstance(type);
             Assert.That(instance, Is.InstanceOf(typeof(Person)));
+        }
+
+        private void Checker()
+        {
+            if (Tests.Checker.IsCheating(new Exercices_Lvl_1()))
+                Assert.IsTrue(false);
         }
     }
 }

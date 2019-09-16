@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Models
 {
-    public interface IVehicule
-    {
-    }
+    public interface IVehicule {}
 
     public class Voiture : IVehicule
     {
