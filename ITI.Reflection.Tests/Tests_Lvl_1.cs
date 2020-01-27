@@ -4,7 +4,7 @@ using Models;
 using System;
 using System.Reflection;
 
-namespace ITI.Reflection.Tests
+namespace Tests
 {
     public class Tests_Lvl_1
     {
@@ -25,12 +25,14 @@ namespace ITI.Reflection.Tests
         [Test]
         public void t4_returns_attribute()
         {
-            Exercices_Lvl_1 ExAttribute = new Exercices_Lvl_1();
+            //var ExAttribute = new Exercices_Lvl_1();
 
-            var attribute = Attribute.GetCustomAttribute(typeof(Exercices_Lvl_1), typeof(CustomAttribute));
-            /* Person person = new Person();
-            string name = Exercices.ReturnName();
-            Assert.That(name, Is.EqualTo(person.Name)); */
+            //var attribute = Attribute.GetCustomAttribute(typeof(Exercices_Lvl_1), typeof(CustomAttribute));
+            //Person person = new Person();
+
+            //var name = Exercices_Lvl_1.GetPropertiesByCutomAttribute(person);
+
+            //Assert.That(name, Is.EqualTo(person.Name));
         }
 
         [Test]

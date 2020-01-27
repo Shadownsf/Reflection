@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 
-namespace ITI.Reflection.Tests
+namespace Tests
 {
     public class Tests_Lvl_2
     {

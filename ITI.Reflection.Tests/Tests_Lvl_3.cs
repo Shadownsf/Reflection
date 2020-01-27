@@ -5,7 +5,7 @@ using ExercicesReflection;
 using System.Reflection;
 
 
-namespace ITI.Reflection.Tests
+namespace Tests
 {
     public class Tests_Lvl_3
     {
@@ -25,11 +25,11 @@ namespace ITI.Reflection.Tests
         [Test]
         public void Invoke_GenericMethod()
         {
-            string motif = "StephanieDeMonaco";
-            string nameOfMethod = "GetBaseTYpe";
-            object type = typeof(GenericType<>);
-            Type result = Exercices_Lvl_3.Invoke_GenericMethod(typeof(GenericType<>), motif, nameOfMethod);
-            Assert.IsTrue( result.Name == "object");
+            string parameter = "StephanieDeMonaco";
+            string nameOfMethod = "GetBaseType";
+            var type = typeof(ClassContainGenericMethod);
+            Type result = Exercices_Lvl_3.Invoke_GenericMethod(type, parameter, nameOfMethod);
+            Assert.IsTrue( result.Name == "Object");
         }
 
         private void Checker()

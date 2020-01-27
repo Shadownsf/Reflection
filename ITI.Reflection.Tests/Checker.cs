@@ -2,7 +2,7 @@
 using System.Reflection;
 
 
-namespace ITI.Reflection.Tests
+namespace Tests
 {
     public class Checker
     {

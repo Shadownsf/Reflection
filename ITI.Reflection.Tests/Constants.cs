@@ -1,5 +1,5 @@
 ﻿
-namespace ITI.Reflection.Tests
+namespace Tests
 {
     public static class Constants
     {

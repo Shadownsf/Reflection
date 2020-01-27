@@ -13,12 +13,14 @@ namespace ExercicesReflection
             return o;
         }
 
-        public static Type Invoke_GenericMethod(Type t, string s, string nameOfMethod)
+        public static Type Invoke_GenericMethod(Type t, string parameter, string nameOfMethod)
         {
-            var stringArray = new object[1] { s };
+            var stringArray = new object[1] { parameter };
+
             MethodInfo method = t.GetMethod(nameOfMethod);
-            MethodInfo generic = method.MakeGenericMethod(t);
-            return (Type)generic.Invoke(Activator.CreateInstance(t), stringArray);
+            MethodInfo generic = method.MakeGenericMethod(typeof(string));
+            var instanceCreated = Activator.CreateInstance(t);
+            return (Type)generic.Invoke(instanceCreated, stringArray);
         }
     }
 }

@@ -80,7 +80,7 @@ namespace ExercicesReflection
             method.Invoke(o, parameters);
         }
 
-        public static PropertyInfo[] GetPropertiesByCutomAttribute(object o, string s)
+        public static PropertyInfo[] GetPropertiesByCutomAttribute(object o)
         {
             Type type = o.GetType();
 
