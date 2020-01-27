@@ -2,8 +2,10 @@
 using System;
 using Models;
 using ExercicesReflection;
+using System.Reflection;
 
-namespace Tests
+
+namespace ITI.Reflection.Tests
 {
     public class Tests_Lvl_3
     {
@@ -32,7 +34,9 @@ namespace Tests
 
         private void Checker()
         {
-            if (Tests.Checker.IsCheating(new Exercices_Lvl_3()))
+            var AssemblyName = Assembly.GetAssembly((new Exercices_Lvl_3()).GetType()).GetName();
+            if (Tests.Checker.IsCheating(AssemblyName))
+
                 Assert.IsTrue(false);
         }
     }

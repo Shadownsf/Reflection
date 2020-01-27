@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 
-namespace Tests
+namespace ITI.Reflection.Tests
 {
     public class Tests_Lvl_2
     {
@@ -59,7 +59,9 @@ namespace Tests
 
         private void Checker()
         {
-            if (Tests.Checker.IsCheating(new Exercices_Lvl_2()))
+            var AssemblyName = Assembly.GetAssembly((new Exercices_Lvl_2()).GetType()).GetName();
+            if (Tests.Checker.IsCheating(AssemblyName))
+
                 Assert.IsTrue(false);
         }
     }

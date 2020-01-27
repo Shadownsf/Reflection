@@ -4,7 +4,7 @@ using Models;
 using System;
 using System.Reflection;
 
-namespace Tests
+namespace ITI.Reflection.Tests
 {
     public class Tests_Lvl_1
     {
@@ -28,9 +28,9 @@ namespace Tests
             Exercices_Lvl_1 ExAttribute = new Exercices_Lvl_1();
 
             var attribute = Attribute.GetCustomAttribute(typeof(Exercices_Lvl_1), typeof(CustomAttribute));
-            /*Person person = new Person();
+            /* Person person = new Person();
             string name = Exercices.ReturnName();
-            Assert.That(name, Is.EqualTo(person.Name));*/
+            Assert.That(name, Is.EqualTo(person.Name)); */
         }
 
         [Test]
@@ -102,7 +102,8 @@ namespace Tests
 
         private void Checker()
         {
-            if (Tests.Checker.IsCheating(new Exercices_Lvl_1()))
+            var AssemblyName = Assembly.GetAssembly((new Exercices_Lvl_1()).GetType()).GetName();
+            if (Tests.Checker.IsCheating(AssemblyName))
                 Assert.IsTrue(false);
         }
     }
