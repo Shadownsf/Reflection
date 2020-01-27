@@ -16,14 +16,14 @@ namespace Tests
         }
 
         [Test]
-        public void instanciate_Generic_Type()
+        public void should_instanciate_generic_type()
         {
             object o = Exercices_Lvl_3.instanciate_GenericType(typeof(GenericType<>) , typeof(int));
             Assert.IsTrue(o is GenericType<int>);
         }
 
         [Test]
-        public void Invoke_GenericMethod()
+        public void should_invoke_generic_method()
         {
             string parameter = "StephanieDeMonaco";
             string nameOfMethod = "GetBaseType";

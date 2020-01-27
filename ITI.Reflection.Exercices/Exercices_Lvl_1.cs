@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 
 
@@ -80,20 +81,14 @@ namespace ExercicesReflection
             method.Invoke(o, parameters);
         }
 
-        public static PropertyInfo[] GetPropertiesByCutomAttribute(object o)
+        public static PropertyInfo GetPropertiesByCutomAttribute(object o,Type attributetype)
         {
-            Type type = o.GetType();
-
-            PropertyInfo[] allProps = type.GetProperties();
-            PropertyInfo[] matchingProps = new PropertyInfo[0];
-
-            foreach (PropertyInfo prop in allProps)
-            {
-                Array.Resize(ref matchingProps, matchingProps.Length + 1);
-                matchingProps[matchingProps.GetUpperBound(0)] = prop;
-            }
-
-            return matchingProps;
+            Type t = o.GetType();
+            var properties = t.GetProperties();
+            var result = properties.Where(f => f.GetCustomAttributes(attributetype, false).Length > 0).ToList();
+            var selectedProperty = result.FirstOrDefault();
+            
+            return selectedProperty;
         }
 
         public static object GetInstance(Type type)

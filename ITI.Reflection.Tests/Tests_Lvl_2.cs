@@ -17,17 +17,17 @@ namespace Tests
         }
 
         [Test]
-        public void Get_Assembly_From_Object()
+        public void should_get_assembly_from_object()
         {
             Person person = new Person();
+
             var assembly = Assembly.GetAssembly(person.GetType());
             Assembly assemblyReturned = Exercices_Lvl_2.Get_Assembly_From_Object(person);
-
             Assert.That(assembly, Is.EqualTo(assemblyReturned));
         }
 
         [Test]
-        public void Get_AssemblyName_Referenced()
+        public void should_get_assemblyname_referenced()
         {
             var exemples = new List<string>() { "ITI.Reflection.Models", "ITI.Reflection.Web" };
             AssemblyName[] assembiesReturned = Exercices_Lvl_2.Get_AssembliesName_Referenced(this);
@@ -37,7 +37,7 @@ namespace Tests
         }
 
         [Test]
-        public void Get_Object_That_Implements_Interface()
+        public void should_get_object_that_implements_interface()
         {
             string nameOfInterface = "IVehicule";
             var assembly = Assembly.GetAssembly(typeof(Voiture));
@@ -46,13 +46,13 @@ namespace Tests
         }
 
         [Test]
-        public void Get_Object_With_Partern()
+        public void should_get_object_with_pattern()
         {
             string pattern = "Controller";
             var exemples = new List<string>() { "PersonController", "VoitureController" };
 
             var assembly = Assembly.GetAssembly(typeof(PersonService));
-            var olist = Exercices_Lvl_2.Get_Object_With_Partern(assembly, pattern);
+            var olist = Exercices_Lvl_2.Get_Object_With_Pattern(assembly, pattern);
             olist = olist.Where(p => exemples.Any(e => p.GetType().Name == e)).ToList();
             Assert.IsTrue(olist.Count == exemples.Count);
         }

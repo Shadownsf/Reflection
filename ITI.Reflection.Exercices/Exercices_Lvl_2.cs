@@ -31,7 +31,7 @@ namespace ExercicesReflection
             return null;
         }
 
-        public static List<object> Get_Object_With_Partern(Assembly a, string pattern)
+        public static List<object> Get_Object_With_Pattern(Assembly a, string pattern)
         {
             Type[] types = a.GetTypes();
             List<object> ObjectsMatched = new List<object>();
