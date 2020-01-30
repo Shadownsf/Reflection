@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
 using Models;
-using ExercicesReflection;
+using Web;
+using Exercices;
 using System.Reflection;
-
 
 namespace Tests
 {

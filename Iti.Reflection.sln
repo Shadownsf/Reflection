@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Tests", "ITI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITI.Reflection.Web", "ITI.Reflection.Web\ITI.Reflection.Web.csproj", "{CF9F4C25-AB59-48C7-AB4E-0DE9B6A6C13B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITI.Reflection.Correction", "ITI.Reflection.Correction\ITI.Reflection.Correction.csproj", "{B07749C4-B398-40C7-B129-B8343C041904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{CF9F4C25-AB59-48C7-AB4E-0DE9B6A6C13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF9F4C25-AB59-48C7-AB4E-0DE9B6A6C13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF9F4C25-AB59-48C7-AB4E-0DE9B6A6C13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07749C4-B398-40C7-B129-B8343C041904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07749C4-B398-40C7-B129-B8343C041904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07749C4-B398-40C7-B129-B8343C041904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07749C4-B398-40C7-B129-B8343C041904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

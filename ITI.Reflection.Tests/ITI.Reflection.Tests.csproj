@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ITI.Reflection.Correction\ITI.Reflection.Correction.csproj" />
     <ProjectReference Include="..\ITI.Reflection.Exercices\ITI.Reflection.Exercices.csproj" />
     <ProjectReference Include="..\ITI.Reflection.Models\ITI.Reflection.Models.csproj" />
     <ProjectReference Include="..\ITI.Reflection.Web\ITI.Reflection.Web.csproj" />

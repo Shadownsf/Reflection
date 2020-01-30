@@ -3,97 +3,63 @@ using System.Linq;
 using System.Reflection;
 
 
-namespace ExercicesReflection
+namespace Exercices
 {
     public class Exercices_Lvl_1
     {
         public static string ReturnName(object o)
         {
-            Type type = o.GetType();
-
-            var name = type.GetProperty("Name").GetValue(o).ToString();
-            return name;
+            throw new NotImplementedException();
         }
 
         public static int returnAgeincremented(object o)
         {
-            Type type = o.GetType();
-
-            // recupere la method specifier en parametre de GetMethod()
-            var method = type.GetMethod("IncrementAge");
-
-            //fait un appel a la method getMethod
-            var age = (int)method.Invoke(o, null);
-            return age;
+            throw new NotImplementedException();
         }
 
         public static Type SetName(object o, string s)
         {
-            Type type = o.GetType();
-
-            type.GetProperty("Name").SetValue(o, s);
-            return type;
+            throw new NotImplementedException();
         }
 
         public static MethodInfo GetMethod(object o, string s)
         {
-            Type type = o.GetType();
-
-            MethodInfo method = type.GetMethod(s);
-            return method;
+            throw new NotImplementedException();
         }
 
         public static Type GetReturnType(object o, string s)
         {
-            Type type = o.GetType();
-
-            MethodInfo method = type.GetMethod(s);
-            return method.ReturnType;
+            throw new NotImplementedException();
         }
 
         public static ParameterInfo[] GetMethodParameters(object o, string s)
         {
-            Type type = o.GetType();
-
-            MethodInfo method = type.GetMethod(s);
-            return method.GetParameters();
+            throw new NotImplementedException();
         }
 
         public static Type GetBaseType(object o)
         {
-            Type type = o.GetType();
-
-            return type.BaseType;
+            throw new NotImplementedException();
         }
 
         public static Type GetInterface(object o, string s)
         {
-            Type type = o.GetType();
-
-            return type.GetInterface(s);
+            throw new NotImplementedException();
         }
 
         public static void InvokeMethod(object o, string s, object[] parameters)
         {
-            Type type = o.GetType();
-
-            MethodInfo method = type.GetMethod(s);
-            method.Invoke(o, parameters);
+            throw new NotImplementedException();
         }
 
         public static PropertyInfo GetPropertiesByCutomAttribute(object o,Type attributetype)
         {
-            Type t = o.GetType();
-            var properties = t.GetProperties();
-            var result = properties.Where(f => f.GetCustomAttributes(attributetype, false).Length > 0).ToList();
-            var selectedProperty = result.FirstOrDefault();
-            
-            return selectedProperty;
+            throw new NotImplementedException();
         }
 
         public static object GetInstance(Type type)
         {
-            return Activator.CreateInstance(type);
+            throw new NotImplementedException();
         }
     }
 }
